@@ -1,8 +1,10 @@
 <script>
-  export let title = 'Title';
-  export let owner = { name: 'Author' };
-  const viewCount = 20;
-  const subtitleText = `${owner.name} - ${viewCount} views - 1 hour ago`;
+  export let title;
+  export let owner;
+  export let created_at;
+  export let preview_image;
+  export let view_count = 0;
+  const subtitleText = `${owner.name} - ${view_count} views - ${created_at} seconds ago`;
 </script>
 
 <style>
@@ -44,11 +46,11 @@
   <img 
     alt="preview"
     class="fit" 
-    src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" 
+    src={preview_image} 
   />
   <div class="info">
     <div class="avatar">
-      <img alt="avatar" src="http://i.stack.imgur.com/Dj7eP.jpg" />
+      <img alt="avatar" src={owner.avatar} />
     </div>
     <div>
       <div class="title">{title}</div>
