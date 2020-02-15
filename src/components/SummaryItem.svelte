@@ -1,7 +1,10 @@
 <script>
+  import { Link } from "svelte-routing";
+
   export let title;
   export let owner;
   export let created_at;
+  export let key;
   export let preview_image;
   export let view_count = 0;
 
@@ -36,6 +39,7 @@
   }
 
   const subtitleText = `${owner.name} - ${shortenNumber(view_count)} views - ${generateDateDifferences(created_at)} ago`;
+  const url = `watch/${key}`;
 </script>
 
 <style>
@@ -74,17 +78,21 @@
 </style>
 
 <div class="row">
-  <img 
-    alt="preview"
-    class="fit" 
-    src={preview_image} 
-  />
+  <Link to={url}>
+    <img 
+      alt="preview"
+      class="fit" 
+      src={preview_image} 
+    />
+  </Link>
   <div class="info">
     <div class="avatar">
       <img alt="avatar" src={owner.avatar} />
     </div>
     <div>
-      <div class="title">{title}</div>
+      <Link to={url}>
+        <div class="title">{title}</div>
+      </Link>
       <div class="subtitle">{subtitleText}</div>
     </div>
     <i class="menu material-icons">more_vert</i>
