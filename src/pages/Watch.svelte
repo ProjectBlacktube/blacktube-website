@@ -3,6 +3,7 @@
 
   import Frame from "../components/WatchFrame.svelte";
   import Navbar from "../components/NavigationBar.svelte";
+  import Detail from "../components/VideoDetail.svelte";
   
   import VIDEO_BY_KEY_QUERY from "../graphql/queries/VideoByKey.js";
   
@@ -18,8 +19,9 @@
     <p> .. loading .. </p>
   {:then response}
     <div>
-      {response.data.videoByKey.title}
-      <Frame />
+      <Frame key={key}
+        preview_image={response.data.videoByKey.preview_image} />
+      <Detail {...response.data.videoByKey} />
     </div>
   {:catch error}
     <p> error {error.message} </p>

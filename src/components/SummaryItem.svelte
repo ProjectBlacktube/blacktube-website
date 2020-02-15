@@ -1,4 +1,6 @@
 <script>
+  import { shortenNumber } from "../helper.js";
+  
   export let title;
   export let owner;
   export let created_at;
@@ -28,12 +30,6 @@
     }
     diff = Math.floor(diff / 365);
     return `${diff} years`;
-  }
-
-  function shortenNumber(num) {
-    return Math.abs(num) > 999 ? 
-      Math.sign(num) * ((Math.abs(num) / 1000).toFixed(1)) + 'k' : 
-      num;
   }
 
   const subtitleText = `${owner.name} - ${shortenNumber(view_count)} views - ${generateDateDifferences(created_at)} ago`;
