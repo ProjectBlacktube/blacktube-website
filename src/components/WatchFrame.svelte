@@ -1,13 +1,15 @@
 <script>
-  export let preview_image;
+  export let key;
+
+  const url = `/dash/${key}/manifest.mpd`;
 </script>
 
 <style>
   .fit {
-    max-width: 100%;
+    width: 100%;
   }
 </style>
 
 <div>
-  <img alt="preview" class="fit" src={preview_image} />
+  <video class="fit" data-dashjs-player src={url} controls></video>
 </div>

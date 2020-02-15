@@ -19,8 +19,7 @@
     <p> .. loading .. </p>
   {:then response}
     <div>
-      <Frame key={key}
-        preview_image={response.data.videoByKey.preview_image} />
+      <Frame key={key} />
       <Detail {...response.data.videoByKey} />
     </div>
   {:catch error}
