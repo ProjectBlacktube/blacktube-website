@@ -1,9 +1,9 @@
 <script>
   import { shortenNumber } from "../helper.js";
+  import CircleImage from "./CircleImage.svelte";
 
   export let title;
   export let owner;
-  export let created_at;
   export let view_count = 0;
 </script>
 
@@ -39,18 +39,6 @@
   .avatar {
     margin-right: 12px;
   }
-
-  .avatar img {
-    object-fit: cover;
-    border-radius:50%;
-    width: 36px;
-    height: 36px;
-  }
-
-  .menu {
-    margin-left: auto;
-    margin-top: 8px;
-  }
 </style>
 
 <div class="container">
@@ -60,7 +48,7 @@
   </div>
   <div class="bottom-container">
     <div class="avatar">
-      <img alt="avatar" src={owner.avatar} />
+      <CircleImage alt="avatar" src={owner.avatar} />
     </div>
     <div class="title floating">{owner.name}</div>
   </div>

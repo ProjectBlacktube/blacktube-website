@@ -1,5 +1,6 @@
 <script>
   import { shortenNumber } from "../helper.js";
+  import CircleImage from "./CircleImage.svelte";
   
   export let title;
   export let owner;
@@ -54,13 +55,6 @@
     margin-right: 12px;
   }
 
-  .avatar img {
-    object-fit: cover;
-    border-radius:50%;
-    width: 36px;
-    height: 36px;
-  }
-
   .menu {
     margin-left: auto;
     margin-top: 8px;
@@ -81,7 +75,7 @@
   </a>
   <div class="info">
     <div class="avatar">
-      <img alt="avatar" src={owner.avatar} />
+      <CircleImage alt="avatar" src={owner.avatar} />
     </div>
     <div>
       <a href={url}>
