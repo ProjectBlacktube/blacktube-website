@@ -5,7 +5,9 @@ const ALL_VIDEO_QUERY = gql`
     videos {
       key
       title
-      description
+      owner {
+        name
+      }
     }
   }
 `;
