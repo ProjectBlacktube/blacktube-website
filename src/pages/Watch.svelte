@@ -7,7 +7,8 @@
   
   import VIDEO_BY_KEY_QUERY from "../graphql/queries/VideoByKey.js";
   
-  export let key;
+  export let params = {};
+  const { key } = params;
   
   const client = getClient();
   const playedVideo = query(client, { query: VIDEO_BY_KEY_QUERY(key) });
