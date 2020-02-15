@@ -1,7 +1,7 @@
 import ApolloClient from 'apollo-boost';
 
 const client = new ApolloClient({
-  uri: 'http://localhost/graphql',
+  uri: '/graphql',
 });
 
 export default client;
