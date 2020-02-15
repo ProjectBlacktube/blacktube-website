@@ -19,6 +19,6 @@
     "apollo-boost": "^0.4.7",
     "graphql": "^14.6.0",
     "svelte-apollo": "^0.3.0",
-    "svelte-routing": "^1.4.0"
+    "svelte-spa-router": "^2.0.0"
   }
 }

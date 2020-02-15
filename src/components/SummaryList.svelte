@@ -1,6 +1,8 @@
 <script>
-  import Item from "./SummaryItem.svelte";
   import { getClient, query } from "svelte-apollo";
+
+  import Item from "./SummaryItem.svelte";
+  
   import ALL_VIDEO_QUERY from "../graphql/queries/AllVideos.js";
   
   const client = getClient();
