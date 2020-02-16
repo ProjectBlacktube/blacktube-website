@@ -44,7 +44,8 @@ export default {
 			contentBase: 'public',
 			port: 8080,
 			proxy: {
-				graphql: 'http://localhost:4000'
+				graphql: 'http://localhost:4000',
+				dash: 'http://localhost:9000'
 			}
 		}),
 
