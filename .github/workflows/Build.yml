@@ -20,6 +20,9 @@ jobs:
       steps:
       - name: Checkout
         uses: actions/checkout@v2
+        
+      - name: Log into registry
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin  
 
       - name: Setup Node
         uses: actions/setup-node@v2
@@ -29,3 +32,9 @@ jobs:
 
       - name: Build Page
         run: npm run build
+
+      - name: Build the docker-compose stack  
+        run: docker build . -t ghcr.io/projectblacktube/blacktube-website:latest
+
+      - name: Push images
+        run: docker push ghcr.io/projectblacktube/blacktube-website:latest
