@@ -4,6 +4,4 @@ services:
   webapp:
     build: .
     ports:
-    - "80:80"
-    volumes:
-    - ./nginx.conf:/etc/nginx/nginx.conf
+    - "8080:80"
