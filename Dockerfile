@@ -4,7 +4,7 @@ WORKDIR /opt/app
 # copy custom nginx config from your host
 COPY --chown=1001:0 ./nginx.conf /etc/nginx/conf.d
 # copy web assets from build stage above
-COPY --from=build ./public --chown=1001:0 /code/build/. .
+COPY --chown=1001:0 ./public .
 # expose is the same as listen directive in the nginx custom config.
 EXPOSE 8080
 # no need to set again user because the default is 1001
