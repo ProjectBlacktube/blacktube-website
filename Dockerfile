@@ -2,7 +2,7 @@ FROM abdennour/nginx-distroless-unprivileged as release
 # workdir is the same as root directive in the nginx custom config.
 WORKDIR /opt/app
 # copy custom nginx config from your host
-COPY --chown=1001:0 ./nginx.conf /etc/nginx/conf.d
+COPY --chown=1001:0 ./config/default.conf /etc/nginx/conf.d
 # copy web assets from build stage above
 COPY --chown=1001:0 ./public .
 # expose is the same as listen directive in the nginx custom config.
